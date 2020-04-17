@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Covid19 India|Let's Fight Together</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+
+  <body>
+    <div class="topnav" id="myTopnav">
+  <a class="active" href="https://www.subhajitsaha.live" style="color:white;text-decoration:none;font-family:product sans">Created By Subhajit with &#x1F496</a>
+  <a href="#news" style="color:white;text-decoration:none;font-family:product sans">News</a>
+  <a href="#contact" style="color:white;text-decoration:none;font-family:product sans">State Helpline Numbers</a>
+  <a href="#about" style="color:white;text-decoration:none;font-family:product sans">WorldWide Effect</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()" style="color:white;text-decoration:none;font-family:product sans">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<div class="jumbotron">
+  <center><h3 style="font-family:product sans;color:white;font-size:40px;line-height:15px;line-height:40px;">Covid19 India Dashboard</h3></center>
+  <center><a id="glowingbutton" class="button" href="#" style="padding-top:15px;">Last Updated on:</a></center>
+</div>
+
+
+  <div class="flex-container">
+    <div id="cp"><h3>Total Confirmed Positive</h3></div>
+    <div id="ta"><h3>Total Active</h3></div>
+    <div id="td"><h3>Total Deaths</h3></div>
+    <div id="tr"><h3>Total Recovered</h3></div>
+  </div>
+  <center><h4 style="font-family:product sans;color:white;font-size:40px;line-height:10px;">Statewise Distribution</h4></center>
+
+        <br id="sub"></br>
+    <div id="root"></div>
+    <script src="scripts.js"></script>
+
+    <script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+    </body>
+</html>
