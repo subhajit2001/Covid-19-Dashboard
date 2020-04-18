@@ -1,0 +1,26 @@
+@media screen and (min-width: 400px) {
+  .card {
+    flex: 1 1 calc(120% - 0rem);
+  }
+  .divmap{
+    flex: 1 1 calc(100% - 0rem);
+  }
+  h3{
+    font-size: 20px;
+  }
+  .flex-container > div{
+    flex: 1 1 calc(100% - 2rem);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .card {
+    flex: 1 1 calc(33% - 2rem);
+  }
+  .divmap{
+    flex: 1 1 calc(50% - 2rem);
+    }
+  .flex-container > div{
+    flex: 1 1 calc(25% - 2rem);
+  }
+}

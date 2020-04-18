@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+
+  </head>
+  <body>
+    <center><div id="regions_div" style="width: 900px; height: 500px;"></div></center>
+
+
+    <script type="text/javascript">
+    var result = [];
+    result.push(['Country', 'Total Confirmed']);
+
+    var request = new XMLHttpRequest()
+    request.open('GET', 'https://api.covid19api.com/summary', true)
+    request.onload = function() {
+      // Begin accessing JSON data here
+      var data = JSON.parse(this.response)
+      if (request.status >= 200 && request.status < 400) {
+
+        data.Countries.forEach(movie => {
+
+          result.push([movie['CountryCode'],movie['TotalConfirmed']]);
+
+        })
+      } else {
+        const errorMessage = document.createElement('marquee')
+        errorMessage.textContent = `Gah, it's not working!`
+        app.appendChild(errorMessage)
+      }
+    }
+
+      google.charts.load('current', {
+        'packages':['geochart'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable(result);
+
+
+        var options = {
+          colorAxis:  {minValue: 0,  colors: ['#42E3F5', '#4842F5']},
+        }
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+request.send();
+
+    </script>
+    <script type="text/javascript" src="loader.js"></script>
+    <script type="text/javascript" src="country_names.js"></script>
+    <script type="text/javascript" src="world_countries.js"></script>
+
+  </body>
+</html>
